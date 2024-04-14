@@ -22,7 +22,7 @@ def main():
                 }}
 
         </style>""".format(
-        padding_top=1.9, padding_bottom=0
+        padding_top=1.9, padding_bottom=1
     ),
     unsafe_allow_html=True,
 )
@@ -63,16 +63,24 @@ def main():
     </style>
     """
     st.markdown(disable_df_selection_css, unsafe_allow_html=True)
-
-    hide_github_icon = """
-    #GithubIcon {
-    visibility: hidden;
-    }
+    
+    st.markdown(
     """
-    st.markdown(hide_github_icon, unsafe_allow_html=True)
+    <style>
+    .css-1jc7ptx, .e1ewe7hr3, .viewerBadge_container__1QSob,
+    .styles_viewerBadge__1yB5_, .viewerBadge_link__1S137,
+    .viewerBadge_text__1JaDK {
+        display: none;
+    }
+    </style>
+    """,
+    unsafe_allow_html=True
+)
+
 
     st.caption('Data Updated till 13-April-2024.')
-    st.caption('Developed with love :heart: in India :flag-in:')
+    st.caption('Developed with :heart: by [Compounding Fish](https://twitter.com/compoundingFish) in India :flag-in:')
+
 
 if __name__ == "__main__":
     main()
