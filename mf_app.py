@@ -47,6 +47,29 @@ def main():
     df_styled = df_styled.format({col: "{:.2f}" for col in returns_cols})
 
     st.dataframe(data=df_styled,hide_index=True,height=800,use_container_width=True)
+    st.markdown(
+                """
+                <style>
+                [data-testid="stElementToolbar"] {
+                    display: none;
+                }
+                </style>
+                """,
+                unsafe_allow_html=True
+            )
+    disable_df_selection_css = """
+    <style>
+        div[role="grid"] div {user-select: none;}
+    </style>
+    """
+    st.markdown(disable_df_selection_css, unsafe_allow_html=True)
+
+    hide_github_icon = """
+    #GithubIcon {
+    visibility: hidden;
+    }
+    """
+    st.markdown(hide_github_icon, unsafe_allow_html=True)
 
     st.caption('Data Updated till 13-April-2024.')
     st.caption('Developed with love :heart: in India :flag-in:')
