@@ -2,16 +2,16 @@ import streamlit as st
 import pandas as pd
 import matplotlib.pyplot as plt
 from matplotlib.colors import LinearSegmentedColormap
+from datetime import date
 
 def format_numeric(x):
     try:
         return '{:.2f}'.format(float(x))
     except ValueError:
-        return x
+        return x   
 
-def main():
-    st.set_page_config(initial_sidebar_state="expanded",layout="wide")
-    st.markdown("<h3 style='text-align: center; color: rainbow;'>Mutual Fund Returns Comparison App</h3>", unsafe_allow_html=True)
+def mid_cap_returns():
+    # st.markdown("<h3 style='text-align: center; color: rainbow;'>Mutual Funds Comparison App</h3>", unsafe_allow_html=True)
     # st.write("### Mutual Fund Returns Comparison App",)
     st.markdown(
     """
@@ -28,10 +28,10 @@ def main():
 )
 
     # Load the data from the CSV file
-    df = pd.read_csv("small_cap/small_cap_yearly_final.csv")
+    df = pd.read_csv("data_files/mid_cap_yearly_final.csv")
 
     # Display the DataFrame
-    st.write("#### Small Cap Yearly Returns(%)")
+    st.write("#### Mid Cap Funds Yearly Returns(%)")
 
 
     # Apply color gradient to the returns for each column
@@ -78,9 +78,3 @@ def main():
 )
 
 
-    st.caption('Data Updated till 13-April-2024.')
-    st.caption('Developed with :heart: by [Compounding Fish](https://twitter.com/compoundingFish) in India :flag-in:')
-
-
-if __name__ == "__main__":
-    main()
