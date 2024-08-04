@@ -8,7 +8,7 @@ from elss import *
 # Main function for the app
 def main():
     st.set_page_config(initial_sidebar_state="expanded",layout="wide")
-    st.header("Mutual Funds App")
+    st.header("Mutual Funds Comparison App")
 
     # Create navigation sidebar
     page = st.sidebar.radio("Select a page", ["Home", "Large Cap Funds","Flexi Cap Funds","ELSS Tax Saving Funds", "Mid Cap Funds", "Small Cap Funds"])
